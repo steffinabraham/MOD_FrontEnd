@@ -1,0 +1,103 @@
+
+
+
+  <nav class="navbar navbar-expand-sm  navbar-dark navcol" style="height: 50px">
+      <div class="container-fluid">
+    
+        <ul class="navbar-nav logo">
+          <a class="navbar-brand"  routerLink=""><b>LEARN ERA</b></a>
+    
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="">Home</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link"  routerLink ="course" routerLinkActive="active">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="#contactus">Contact Us</a>
+          </li>
+        </ul>
+    
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item" *ngIf="setok()==0">
+            <a class="nav-link" href="#loginscreen" routerLinkActive="active">Sign Up</a>
+</li><li>
+            <div *ngIf="setok()!=0">
+            <a class="nav-link" style="cursor:pointer"(click)="logout()" >Logout</a>
+          </div>
+          </li>
+          <li class="nav-item " *ngIf="setok()==0" >
+            <a class="nav-link" onclick="document.getElementById('id03').style.display='block'" href="#signup" routerLinkActive="active" style="width:auto;" data-toggle="modal" data-target="#myModal">LogIn</a>
+            
+          </li>
+        </ul>
+    
+      </div>
+    
+    
+    </nav>
+
+<!-- -------------------------------------------------------sigup------------------------------------------------ -->
+
+<div id="id03" class="modal">
+  
+  <form  #form1="ngForm" class="modal-content animate" action="/action_page.php" method="post">
+    
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label style="color: white"><b>User Name</b></label>
+
+      <label style="color: white"><b>Email :</b></label>
+      <input type="email" placeholder="Enter Email ID" [(ngModel)]="item.email" name="email" #email="ngModel" required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+    
+      <label style="color: white"><b>Enter Password</b></label>
+              <input type="password" placeholder="Enter Password" [(ngModel)]="item.pwd" name="pass_word"
+                #pass_word2="ngModel" required>
+
+                <!-- --------------------------------------------------------VALIDATION -->
+
+
+
+   
+      <div class="justify-content-center" >
+        <button class="btn btn-dark button1" onclick="document.getElementById('id03').style.display='none'" (click)="Login()"> LOG IN </button>
+      </div>
+
+      <div style="font-size: 15px; color: white;" class="head d-flex justify-content-center">
+        <p>Already have an account? <a routerLink="#mentorlogin">Sign In</a></p>
+      </div>
+
+      <div class="justify-content-center" >
+        <button type="button"  onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      <div>
+        <p class="red-text d-flex justify-content-center">{{message}}</p>
+      </div>
+     
+    </div>
+    <div>
+      <h3 class="error">{{error_message}}</h3>
+    </div>
+    
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id03');
+
+// When the mentor clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+}
+</script>
+

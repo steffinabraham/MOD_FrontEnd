@@ -1,0 +1,16 @@
+body{
+    background-image:url('/assets/Purple/space.jpg');
+    background-size:cover; width:auto;
+}
+
+.bg1{
+    background-size:cover; width:auto;
+    background-image:url('/assets/Purple/space.jpg');
+    background-position:50% 50%;
+  }
+
+  /* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */

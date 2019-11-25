@@ -1,0 +1,472 @@
+<div class="pimg1">
+  <div class="ptext">
+    <div class="a">Learn Era</div>
+    <div class="b">Makes you stand Apart</div>
+  </div>
+</div>
+
+<!------------------------------------------------------------------------------------------------>
+
+<section id="about" class="section-bg section section-dark sectionHeight pad">
+  <div class="container">
+
+    <header class="section-header">
+      <h2>About Us</h2>
+      <br>
+      <p>Teaching is one of the most challenging and complex jobs on the planet.
+         Our digital resources, tools, and learning materials are developed by educational 
+         experts to incorporate leading pedagogical practices. 
+         They are useful in any type of teaching moment and many can be used to support
+          national education standards</p>
+
+    </header>
+
+  </div>
+</section>
+
+
+
+<!---------------------------------------COURSES---------------------------------------------------------->
+
+
+
+
+<div class="pimgClouds" id="courses">
+  <div class="ptext">
+    <span class="border ">
+      Courses
+    </span>
+  </div>
+</div>
+
+<!-- <section id="services" class="section-bg section section-dark pimg2">
+  <div class="container">
+
+
+
+    <div class="row">
+
+      <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+        <div class="box">
+          <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline"
+              style="color: #ff689b;"></i></div>
+          <h4 class="title"><a href="">Angular</a></h4>
+          <p class="description">Python is a general purpose and high level programming language. You can use Python for
+            developing desktop GUI applications,
+            websites and web applications. Also, Python, as a high level programming language,
+            allows you to focus on core functionality of the application by taking care of common programming tasks.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+        <div class="box">
+          <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline"
+              style="color: #e98e06;"></i></div>
+          <h4 class="title"><a href="https://cdn.freebiesupply.com/logos/thumbs/2x/java-4-logo.png">Java</a></h4>
+
+          <p class="description">Machine learning is an application of artificial intelligence (AI)
+            that provides systems the ability to automatically learn and improve from experience without being
+            explicitly programmed. Machine learning focuses on the development of computer programs that can access
+            data and use it learn for themselves.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+        <div class="box">
+          <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i>
+          </div>
+          <h4 class="title"><a href="">Python</a></h4>
+          <p class="description">The Science of Well-Being What's the point of being smart if you're still unhappy
+            at the end of the day? This wildly popular course will help you understand the science of
+            well-being both for intellectual interest and practical application.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+        <div class="box">
+          <div class="icon" style="background: #eafde7;"><i class="ion-ios-speedometer-outline"
+              style="color:#41cf2e;"></i></div>
+          <h4 class="title"><a href="">UI/UX</a></h4>
+          <p class="description">Bitcoin and Cryptocurrency Technologies The price of bitcoin may be way down
+            but interest in the subject of the underlying technology is still sky high, if participation
+            in this course is anything to go by.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+        <div class="box">
+          <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline" style="color: #2282ff;"></i>
+          </div>
+          <h4 class="title"><a href="">Vue Js </a></h4>
+          <p class="description">Financial Markets What's going on when the markets go up and down,
+            what is the social function underlying all the craziness on CNBC,
+            and what does that have to do with your career? This course promises answers.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+        <div class="box">
+          <div class="icon" style="background: #ecebff;"><i class="ion-ios-clock-outline" style="color: #8660fe;"></i>
+          </div>
+          <h4 class="title"><a href="">C#</a></h4>
+          <p class="description">Java is a widely used programming language expressly designed for use in
+            the distributed environment of the internet. ... Java can be used to create complete applications
+            that may run on a single computer or be distributed among servers and clients in a network.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section> -->
+
+
+
+<section id="services" class="section-bg section section-dark pimg2" >
+    <div class="container"  >
+
+      <div class="row" >
+       
+            <div class="col-md-6 col-lg-4 wow bounceInUp"   data-wow-duration="1.4s" *ngFor="let techitem of techlist">
+              <div class="box" >
+                <div class="icon" style="background: #fc0058;"><i class="ion-ios-analytics-outline"
+                    style="color: #ff689b;"></i></div>
+                <h4 class="title">{{techitem.skillName}}</h4>
+                <p class="justify-content-center">{{techitem.toc}}</p>
+                <p class="justify-content-center title">₹{{techitem.fee}} </p>
+           
+
+              </div>
+            </div>
+ 
+      </div>
+    </div>
+
+</section>
+<!-- ############################################----- SEARCH BEGIN ----############################################ -->
+
+<section class="section section-bg section section-dark sectionHeight" id="search">
+  <div class="pimgClouds" style="padding:0px 0px;">
+    <div class="wowsearch">
+      <!-- <p>Your Search End Here..</p> -->
+      <input type="text" placeholder="Enter Tech" [(ngModel)]="skill">
+      <div class="search"></div>
+<br>
+<br>
+<br>
+      <button type="submit" class="wow" (click)="Search()" >Search</button></div>
+      <table>
+          <tbody *ngFor="let mentoritem of mentorlist">
+            <tr>
+              <td>
+                {{mentoritem.mentorId}}
+              </td>
+              <td>
+                  {{mentoritem.mentorName}}
+                </td>
+                <td>
+                    {{mentoritem.email}}
+                  </td>
+                  <td>
+                      {{mentoritem.mobileNo}}
+                    </td>
+            </tr>
+        
+          </tbody>
+        </table>
+    
+  </div>
+</section>
+<div>
+<!-- <input type="text" placeholder="Enter technology" style="margin-left: 16px;" [(ngModel)]="skill"><br>
+        <button type="submit" class="search" (click)="Search()" >Search</button></div> -->
+
+
+
+<!-- ############################################----- SEARCH END ----############################################ -->
+
+
+
+<!-- <div class="pimg1">
+  <div class="ptext">
+    <span class="border">
+      Let's Get Started..
+    </span>
+  </div>
+</div> -->
+<!-- ############################################-----LOGIN-----################################################ -->
+
+<div class="pimg1" id="loginscreen" style="min-height:600px;">
+    
+    <!-- <div class="loginptext">
+        <span class="loginborder">
+          Let's Get Started..
+        </span>
+      </div>   -->
+<div class="move">
+  <table>
+    <tr>
+      <td>
+        <div class="frontimage">
+          <form action="tsignin.html">
+            <input type="image" alt="Student" src="/assets/girluser.png" width="100%">
+          </form>
+        </div>
+      </td>
+      <td>
+          <div class="frontimage">
+        <form action="lsignin.html">
+          <input type="image" alt="Trainer" src="/assets/trainer.png" width="100%">
+        </form>
+      </div>
+      </td>
+
+
+    </tr>
+    <tr>
+      <td>
+        <div class="frontbutton">
+          <button type="button" class="btn-primary"
+            onclick="document.getElementById('id01').style.display='block'">User</button>
+        </div>
+      </td>
+      <td>
+        <div class="frontbutton">
+          <button type="button" class="btn-primary"
+            onclick="document.getElementById('id02').style.display='block'">Mentor</button>
+        </div>
+      </td>
+
+
+    </tr>
+  </table>
+</div>
+
+
+
+
+<!-- ---------------USER - MODAL ID01------------------------------------------- -->
+
+
+<div id="id01" class="modal">
+  
+  <form  #form1="ngForm" class="modal-content animate" action="/action_page.php" method="post">
+    
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="/assets/mentor.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label style="color: white"><b>User Name</b></label>
+
+      <input type="text" placeholder="Enter User Name" [(ngModel)]="useritem.UserName" name="name" #name="ngModel"
+        minlength="3" required>
+    
+      <label style="color: white"><b>Email :</b></label>
+      <input type="email" placeholder="Enter Email ID" [(ngModel)]="useritem.Email" name="email" #email="ngModel" required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+    
+      <label style="color: white"><b>Create Password</b></label>
+              <input type="password" placeholder="Enter Password" [(ngModel)]="useritem.Password" name="pass_word"
+                #pass_word2="ngModel" required>
+
+                <!-- --------------------------------------------------------VALIDATION -->
+
+
+
+   
+      <div class="justify-content-center" >
+        <button class="btn btn-dark button1" onclick="document.getElementById('id01').style.display='none'" (click)="UserAdd()"> REGISTER </button>
+      </div>
+
+      <div style="font-size: 15px; color: white;" class="head d-flex justify-content-center">
+        <p>Already have an account? <a routerLink="#mentorlogin">Sign In</a></p>
+      </div>
+
+      <div class="justify-content-center" >
+        <button type="button"  onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      <div>
+        <p class="red-text d-flex justify-content-center">{{message}}</p>
+      </div>
+     
+    </div>
+    <div>
+      <h3 class="error">{{error_message}}</h3>
+    </div>
+    
+
+  </form>
+</div>
+
+
+
+<!-- -----------------------MENTOR - MODAL ID02------------------------------------------- -->
+
+<div id="id02" class="modal">
+  
+  <form  #form1="ngForm" class="modal-content animate" action="/action_page.php" method="post">
+    
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="/assets/mentor.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label style="color: white"><b>Mentor Name</b></label>
+
+      <input type="text" placeholder="Enter User Name" [(ngModel)]="mentoritem.MentorName" name="name" #name="ngModel"
+      minlength="3" required>
+    
+      <label style="color: white"><b>Email :</b></label>
+      <input type="email" placeholder="Enter Email ID" [(ngModel)]="mentoritem.Email" name="email" #email="ngModel" required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+    
+      <label style="color: white"><b>Mobile No :</b></label>
+      <input type="number" placeholder="Enter Mobile No" [(ngModel)]="mentoritem.MobileNo" name="MobileNo" #email_id2="ngModel">
+    
+      <label style="color: white"><b>Experience</b></label>
+      <input type="number" placeholder="Experience in Months" [(ngModel)]="mentoritem.Experience" name="exp" #email_id2="ngModel">
+    
+      <label style="color: white"><b>Mentor Skill</b></label>
+      <input type="text" list="skills" placeholder="Enter MentorSkills" [(ngModel)]="mentoritem.MentorSkills" name="skills"
+        #email_id2="ngModel">
+      <datalist id="skills">
+        <option value="Java">
+        <option value="C++">
+        <option value="Python">
+      </datalist>
+    
+      <label style="color: white"><b>Prefered TimeSlot [FN/AN]</b></label>
+      <input type="text" list="timeslot" placeholder="Enter TimeSlot" [(ngModel)]="mentoritem.TimeSlot" name="timeslot"
+        #email_id2="ngModel">
+      <datalist id="timeslot">
+        <option value="Afternoon">
+        <option value="Morning">
+        <option value="Evening">
+      </datalist>
+    
+    
+      <label style="color: white"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" [(ngModel)]="mentoritem.Password" name="pass_word"
+                #pass_word2="ngModel" required>
+
+                <!-- --------------------------------------------------------VALIDATION -->
+
+
+                
+
+   
+      <div class="justify-content-center" >
+        <button class="btn btn-dark button1" onclick="document.getElementById('id02').style.display='none'" (click)="MentorAdd()"> REGISTER </button>
+      </div>
+
+      <div style="font-size: 15px; color: white;" class="head d-flex justify-content-center">
+        <p>Already have an account? <a routerLink="#mentorlogin">Sign In</a></p>
+      </div>
+
+      <div class="justify-content-center" >
+        <button type="button"  onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+      <div>
+        <p class="red-text d-flex justify-content-center">{{message}}</p>
+      </div>
+     
+    </div>
+    <div>
+      <h3 class="error">{{error_message}}</h3>
+    </div>
+    
+
+  </form>
+</div>
+
+
+<!-- ----------------------------------------------SCRIPT------------------------------------------------- -->
+
+<script>
+  // Get the modal
+  // var modal = document.getElementById('id01');
+  // $('#myModal').on('shown.bs.modal', function () {
+  //   $('#myInput').trigger('focus')
+  // })
+  var modal = document.getElementById('id01');
+  var modal = document.getElementById('id02');
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+</div>
+<!-- ############################################--CONTACT US--################################################ -->
+<section class="section section-bg section section-dark sectionHeight" id="search">
+    <div class="pimgClouds" style="padding:0px 0px;">
+
+<div style="padding-top: 40px;height: 655px;" id="contactus">
+
+  <div class="d-flex justify-content-center">
+    <h1 style="color: rgb(211, 132, 248)">WE WOULD LOVE TO HEAR FROM YOU</h1>
+  </div>
+
+  <form (ngSubmit)="submit_form_data()" #form1="ngForm">
+    <div style="padding-top: 30px;" class="d-flex justify-content-center">
+      <div class="card2">
+       
+        <div class="card-body">
+          <label style="color: white"><b>Email</b></label>
+          <input type="email" [(ngModel)]="email_id" name="email_id" #email_id2="ngModel" required
+            placeholder="Enter Email" style="height: 50px; width: 100%">
+<br>
+          <label style="color: white"><b>Enter Your Message Here</b></label><br>
+          <input type="text" [(ngModel)]="user_message" name="user_message" #message2="ngModel" required
+            placeholder="Enter Message" style="height: 200px; width: 100%">
+
+          <span *ngIf="email_id2.invalid && (email_id2.dirty || email_id2.touched)" class="red-text">
+            <span *ngIf="email_id2.errors.required">Email should not be empty.</span>
+          </span><br>
+          <span *ngIf="message2.invalid && (message2.dirty || message2.touched)" class="red-text">
+            <span *ngIf="message2.errors.required" style="color: rgb(255, 0, 0)" > Message Should not be Empty</span>
+          </span><br>
+          <div><p class="red-text d-flex justify-content-center">{{message}}</p></div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+    <br>
+
+
+
+
+
+
+
+
+
+    <div class="d-flex justify-content-center">
+      <button [disabled]="!form1.form.valid" class="btn btn-red button1">Send Message</button>
+    </div>
+
+  </form>
+
+
+</div>
+
+
+
+
+    </div>
+  </section>
+
+
+
+
+  

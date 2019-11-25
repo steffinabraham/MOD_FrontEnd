@@ -1,0 +1,60 @@
+  
+<div class="head d-flex justify-content-center">
+        <h2>Add A New Course To Learner !</h2>
+      </div>
+      
+      <div class="head d-flex justify-content-center" style="padding-bottom: 10px">
+        <div class="cardreg">
+          <div class="head d-flex justify-content-center">
+            <form (ngSubmit)="submit_form_data()" #form1="ngForm">
+      
+              <div class="container">
+      
+                <label style="color: white"><b>Course Name</b></label>
+                <input type="text" placeholder="Enter Course Name" [(ngModel)]="course_name" name="course_name" #course_name2="ngModel" minlength="3" required>
+                
+      
+      
+                <label style="color: white"><b>Trainer Name</b></label>
+                <input type="text" placeholder="Enter Trainer Name" [(ngModel)]="trainer_name" name="trainer_name" #trainer_name2="ngModel" minlength="3" required>
+                
+              
+                
+                <label style="color: white"><b>Course Logo URL</b></label>
+                <input type="text" placeholder="Course Logo" [(ngModel)]="course_logo" name="course_logo" #course_logo2="ngModel">
+
+
+                <label style="color: white"><b>Course Description</b></label>
+                <input type="text" placeholder="Course Description" [(ngModel)]="course_description" name="course_description" #course_description2="ngModel">
+                
+      
+                
+                <span *ngIf="course_name2.invalid && (course_name2.dirty || course_name2.touched)" class="red-text">
+                  <span *ngIf="course_name2.errors.required"> Course Name should not be empty.</span>
+                  <span *ngIf="course_name2.errors.minlength"> Course Name must be at least 3 characters long.</span>
+                </span><br>
+      
+                <span *ngIf="trainer_name2.invalid && (trainer_name2.dirty || trainer_name2.touched)" class="red-text">
+                  <span *ngIf="trainer_name2.errors.required"> Trainer Name should not be empty.</span>
+                  <span *ngIf="trainer_name2.errors.minlength"> Trainer Name must be at least 3 characters long.</span>
+                </span><br>
+      
+                
+      
+      
+      
+      
+                <div class="d-flex justify-content-center">
+                  <!-- <input [disabled]="!form1.form.valid" type="button" class="" value="Sign Up"> -->
+                  <button [disabled]="!form1.form.valid" class="btn btn-dark button1">Add Course</button>
+                </div>
+              </div>
+      
+              
+              <div><p class="red-text d-flex justify-content-center">{{message}}</p></div>
+            </form>
+            
+          </div>
+          
+        </div>
+      </div>

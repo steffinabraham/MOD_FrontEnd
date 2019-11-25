@@ -1,0 +1,73 @@
+.move{
+    padding-left: 35px;
+}
+.head{
+    color: black;
+    padding-top: 50px;
+}
+.moveform{
+    padding-left: 520px;
+    padding-top: 150px;
+}
+.movebutton{
+    padding-left: 120px;
+}
+
+.search{
+    padding-left: 600px;
+}
+
+.tbpad{
+    padding-left: 20px;
+}
+
+.sbpad{
+    padding-left: 40px;
+}
+
+.navcol{
+    background-color:transparent;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.6) !important;
+    }
+
+
+
+input[type=text], input[type=password], input[type=email]{
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+
+.button1 {
+  box-shadow: 0 4px 8px 0 rgba(247, 244, 244, 0.7), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.cardreg{
+   
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.6) !important;
+    }
+.padded{
+    padding-left: 42px;
+}
+
+.btnmove{
+    flex-direction: row;
+}
+
+.logoutright{
+padding-left: 900px;
+}

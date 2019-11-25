@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" style="border:2px solid green;">
+    <h1 style="text-align:center;">User Login</h1>
+    <form (ngSubmit)="submit_form_data()" #form1="ngForm">
+      <label>Email Id</label><br>
+        <input type="email" [(ngModel)]="email_id" name="email_id" #email_id_ref="ngModel" required placeholder="Enter Email Id">
+        <span *ngIf="email_id_ref.invalid && email_id_ref.dirty">
+            <span *ngIf="email_id_ref.errors.required" class="error"> Should not be empty</span>
+        </span><br><br>
+    
+        <label>Password</label><br>
+        <input type="password" [(ngModel)]="pass_word" name="pass_word" #pass_word_ref="ngModel" required placeholder="Enter Password">
+        <span *ngIf="pass_word_ref.invalid && pass_word_ref.dirty">
+          <span *ngIf="pass_word_ref.errors.required" class="error"> Should not be empty</span>
+        </span><br><br>
+    
+        <button [disabled]="!form1.form.valid" class="btn btn-success">Login</button>
+    </form>
+    <div>
+      <h3 class="error">{{error_message}}</h3>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

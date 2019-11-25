@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center" style="padding-bottom:10%">
+
+    <div class="card-body" style="padding-top: 50px">
+  
+      <div class="d-flex justify-content-center">
+        <input style=height:50% class="form-control mr-sm-3 " type="textbox" placeholder="    Technology"  [(ngModel)]="course_name" >
+      </div>
+      <div class="d-flex justify-content-center" style="padding-top: 20px">
+        <input type="button" class="btn btn-sm btn-dark button1" value="Search Trainer" (click)="get_searched_course(this.course_name)">
+      </div>
+    </div>
+   
+  </div>
+
+  <section id="services" class="section section-light">
+      <div class="container">
+        <div id="search_heading">
+        <header class="section-header" style="padding-bottom: 20px">
+          <h3>Search Results</h3>
+    
+        </header>
+        </div>
+        <div class="row">
+    
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s" *ngFor="let ccourse of ccourses">
+            <div class="box">
+              <!-- <div class="icon" style="background: darkred;"><i class="ion-ios-analytics-outline"
+                  style="color: #ff689b;"></i>
+                </div> -->
+              <div>
+                <img src="{{ccourse.course_logo}}" class="img">
+              </div>
+    
+              <h4 class="title" style="padding-top: 10px"><p>{{ccourse.course_name}}</p></h4>
+              <p class="description" style="height: 180px">{{ccourse.course_desc}}</p>
+              
+              <p>{{ccourse.course_trainer}}</p>
+            </div>
+          </div>
+          
+    
+        </div>
+    
+      </div>
+    </section>
+
+
+   <section id="services" class="section-bg section section-dark">
+    <div class="container">
+
+      <header class="section-header">
+        <h3>Most Popular Courses</h3>
+        
+      </header>
+
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s" *ngFor = "let course of courses">
+          <div class="box">
+            <img src="{{course.course_logo}}" style="height:100px">
+            <h4 class="title"><p>{{course.course_name}}</p></h4>
+            <p class="description">{{course.course_desc}}</p>
+            <p class="title">{{course.course_trainer}}</p>
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+  </section>
