@@ -1,74 +1,36 @@
-<div class="justify-content-center">
-    <h2 style="color: white">Create Mentor Account </h2>
-  </div>
-  
-  <!-- <div class="justify-content-center" style="padding-bottom: 10px">
-    <div class="cardreg">
-      <div class=" justify-content-center">
-        <form (ngSubmit)="submit_form_data()" #form1="ngForm">-->
-  
-  <div class="container">
-  
-  
-    <label style="color: white"><b>Mentor Name</b></label>
-  
-    <input type="text" placeholder="Enter Mentor Name" [(ngModel)]="item.MentorName" name="name" #name="ngModel"
-      minlength="3" required>
-  
-    <label style="color: white"><b>Email :</b></label>
-    <input type="email" placeholder="Enter Email ID" [(ngModel)]="item.Email" name="email" #email="ngModel" required
-      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
-  
-    <label style="color: white"><b>Mobile No :</b></label>
-    <input type="number" placeholder="Enter Mobile No" [(ngModel)]="item.MobileNo" name="MobileNo" #email_id2="ngModel">
-  
-    <label style="color: white"><b>Experience</b></label>
-    <input type="number" placeholder="Experience in Months" [(ngModel)]="item.Experience" name="exp" #email_id2="ngModel">
-  
-    <label style="color: white"><b>Mentor Skill</b></label>
-    <input type="text" list="skills" placeholder="Enter MentorSkills" [(ngModel)]="item.MentorSkills" name="skills"
-      #email_id2="ngModel">
-    <datalist id="skills">
-      <option value="Java">
-      <option value="C++">
-      <option value="Python">
-    </datalist>
-  
-    <label style="color: white"><b>Prefered TimeSlot [FN/AN]</b></label>
-    <input type="text" list="timeslot" placeholder="Enter TimeSlot" [(ngModel)]="item.TimeSlot" name="timeslot"
-      #email_id2="ngModel">
-    <datalist id="timeslot">
-      <option value="Afternoon">
-      <option value="Morning">
-      <option value="Evening">
-    </datalist>
-  
-  
-    <label style="color: white"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" [(ngModel)]="item.Password" name="pass_word"
-              #pass_word2="ngModel" required>
-  
-    
-  
-  
-  
-  
-    <div class="justify-content-center">
-      <button class="btn btn-dark button1" (click)="Add()"> REGISTER </button>
-    </div>
-  
-  </div>
-  
-  <div style="font-size: 15px; color: white;" class="head d-flex justify-content-center">
-    <p>Already have an account? <a routerLink="mentorlogin">Sign In</a></p><br>
-  </div>
-  
-  <div>
-    <p class="red-text d-flex justify-content-center">{{message}}</p>
-  </div>
-  <!-- </form>
-  
+<div class="col-lg-6 grid-margin stretch-card justify-content-center">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">USER DETAILS</h4>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Users</th>
+              <th>Course</th>
+              <th>Progress</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let useritem of userlist" class="text">
+              <td>{{useritem.userName}}</td>
+              <td>{{trainingitem.skillName}}</td>
+              <td class="text-danger font-weight-bold "> 28.76% <i class="ti-arrow-down"></i></td>
+              <td><label class="badge badge-danger">Pending</label></td>
+            </tr>
+
+            <!-- <td class="text-danger"> 21.06% <i class="ti-arrow-down"></i></td>
+                <td><label class="badge badge-warning">In progress</label></td>
+                <td class="text-danger"> 35.00% <i class="ti-arrow-down"></i></td>
+                <td><label class="badge badge-info">Fixed</label></td>
+                <td class="text-success"> 82.00% <i class="ti-arrow-up"></i></td>
+                <td><label class="badge badge-success">Completed</label></td>
+                <td class="text-success"> 98.05% <i class="ti-arrow-up"></i></td>
+                <td><label class="badge badge-warning">In progress</label></td> -->
+          </tbody>
+        </table>
       </div>
-  
     </div>
-  </div> -->
+  </div>
+</div>

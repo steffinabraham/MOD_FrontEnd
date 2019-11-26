@@ -144,35 +144,57 @@
 </section>
 <!-- ############################################----- SEARCH BEGIN ----############################################ -->
 
-<section class="section section-bg section section-dark sectionHeight" id="search">
+<section class="section section-bg section section-dark sectionHeight" id="services">
   <div class="pimgClouds" style="padding:0px 0px;">
     <div class="wowsearch">
       <!-- <p>Your Search End Here..</p> -->
+      <br>
+<br>
+<br>
       <input type="text" placeholder="Enter Tech" [(ngModel)]="skill">
       <div class="search"></div>
-<br>
-<br>
-<br>
+
       <button type="submit" class="wow" (click)="Search()" >Search</button></div>
-      <table>
-          <tbody *ngFor="let mentoritem of mentorlist">
-            <tr>
-              <td>
-                {{mentoritem.mentorId}}
-              </td>
-              <td>
-                  {{mentoritem.mentorName}}
-                </td>
-                <td>
-                    {{mentoritem.email}}
-                  </td>
-                  <td>
-                      {{mentoritem.mobileNo}}
-                    </td>
-            </tr>
-        
-          </tbody>
-        </table>
+      <div class="container"  >
+
+          <div class="row "  >
+           
+                <div class="col-md-6 col-lg-4 wow bounceInUp hidden {display: none;}"   data-wow-duration="1.4s" *ngFor="let mentoritem of mentorlist" >
+                  <div class="box1"  >  
+                    
+                        <div class="col-md-6 col-lg-4 wow bounceInUp "   data-wow-duration="1.4s" ></div>
+                    <h4 class="title" style="color: #ffffff;"> MENTOR NAME: {{mentoritem.mentorName}} </h4>
+                    <p class=" title justify-content-center" style="color: #f8f4f5;">EMAIL: {{mentoritem.email}}</p>
+                    <p class="justify-content-center title" style="color: #ffffff;">YEARS OF EXP: {{mentoritem.experience}} </p>
+                    <p class="justify-content-center title" style="color: #f8f4f5;">SKILLS: {{mentoritem.mentorSkills}} </p>
+                    
+               
+    
+                  </div>
+                </div>
+     
+          </div>
+        </div>
+        <!-- <div class="card1 tablepadding">
+            <table class="table table-striped table-bordered table-hover">
+              <tr class="text">
+                
+                <th>Mentor Name</th>
+                <th>Email</th>
+                <th>Experience</th>
+                <th>Mentor Skills</th>
+
+              </tr>
+              <tr *ngFor="let mentoritem of mentorlist" class="text">
+             
+                <td>{{mentoritem.mentorName}}</td>
+                <td>{{mentoritem.email}}</td>
+                <td>{{mentoritem.experience}}</td>
+                <td>{{mentoritem.mentorSkills}}</td>
+
+              </tr>
+            </table>
+          </div> -->
     
   </div>
 </section>

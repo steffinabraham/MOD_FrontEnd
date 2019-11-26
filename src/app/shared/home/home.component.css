@@ -18,6 +18,46 @@ color:rgb(49, 26, 26);
 }
 
 
+.card1{
+	height: auto;
+	width: 700px;
+	/* background-color: rgba(255, 255, 255, 0.89); */
+	background-color:rgba(196, 2, 255, 0.795);
+	/* color: white; */
+	border-radius: 20px;
+  }
+  
+  .text,.h1{
+	color: white;
+  }
+  
+  .sidebar a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #b4b3b3;
+	display: block;
+  }
+  
+  .sidebar a:hover {
+	color: #f1f1f1;
+  }
+  
+  .main {
+	margin-left: 160px;
+	padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+	.sidebar {padding-top: 15px;}
+	.sidebar a {font-size: 18px;}
+  }
+  
+  .tablepadding{
+	padding: 10px;
+  }
+  
+
 div.a {
 
   line-height:1.8em;
@@ -109,7 +149,6 @@ min-height:400px;
 .pimgClouds{
   background-image:url("src\assets\Purple\clouds.jpg");
   min-height:400px;
-  padding: 0px 0px;
   background-attachment:scroll;
   }
 
@@ -176,7 +215,7 @@ background-color:transparent;
 --------------------------------*/
 
 #services {
-  padding: 60px 0 40px 0;
+  padding: 0;
 }
 
 #services .box {
@@ -189,9 +228,23 @@ background-color:transparent;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out ;
   text-align: center;
-  height:500px;
+  height:400px;
   
 }
+
+#services .box1 {
+	padding: 30px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	margin: 0 10px 40px 10px;
+	background: rgb(209, 58, 255,0.4);
+	box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+	transition: all 0.3s ease-in-out ;
+	text-align: center;
+	height:200px;
+	
+  }
 
 #services .box:hover {
   -webkit-transform: scale(1.1);
