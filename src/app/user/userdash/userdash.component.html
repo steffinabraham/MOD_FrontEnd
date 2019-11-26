@@ -1,46 +1,149 @@
-
 <div class="d-flex justify-content-center" style="padding-top: 40px; color: rgb(255, 255, 255); font-weight: bold;">
-    <h1>LEARNER PROFILE </h1>
+    <h1>WELCOME {{UserName}}! </h1>
 </div>
 
-<div class="container" style="padding: 30px" >
+<div class="container" style="padding: 30px">
 
-    <div class="card-deck" >
+    <div class="card-deck">
 
-        <div class="card " style=" width:100px; height:200px; border-radius: 2rem; color: rgb(255, 255, 255); background-color: rgb(199, 139, 255,0.8);">
-            
-            <div class="card-body "style="padding: 30px">
+        <div class="card "
+            style=" width:100px; height:200px; border-radius: 2rem; color: rgb(255, 255, 255); background-color: rgb(199, 139, 255,0.8);">
+
+            <div class="card-body " style="padding: 30px">
                 <span style=" color: rgba(255, 255, 255)" class="fa fa-clock-o fa-3x "></span>
-                <h4 class="card-title" >Trainings Ongoing</h4>
-             
-                <button class="btn btn-dark button1" style="display: inline!important;" [routerLink]="['../usercurrent']">View</button>
+                <h4 class="card-title">EDIT PROFILE</h4>
+
+                <button class="btn btn-dark button1" type="submit" (click)="add()" data-toggle="modal"
+                    data-target="#myModal" style="display: inline!important;">View</button>
             </div>
         </div>
-    
-  
 
-        <div class="card" style="width:100px; height:200px; border-radius: 2rem; color: white;  background-color: rgb(199, 139, 255,0.8);">
+
+
+        <div class="card"
+            style="width:100px; height:200px; border-radius: 2rem; color: white;  background-color: rgb(199, 139, 255,0.8);">
             <div class="card-body">
                 <span style=" color: white" class="fa fa-thumbs-o-up fa-3x"></span>
 
- 
-                <h4 class="card-title">Trainings Completed</h4>
-                <button class="btn btn-dark button1" style="display: inline!important;" [routerLink]="['../usercompleted']">View</button>
+
+                <h4 class="card-title">CURRENT TRAININGS</h4>
+                <button class="btn btn-dark button1" type="submit" (click)="UserCurTrainings()" data-toggle="modal"
+                    data-target="#myModal2" style="display: inline!important;">View</button>
             </div>
         </div>
-   
 
-        <div class="card" style="width:100px; height:200px; border-radius: 2rem; color: white;  background-color: rgb(199, 139, 255,0.8);">
-            <div class="card-body">
-                <span style=" color: white" class="fa fa-search fa-3x"></span>
 
-                <h4 class="card-title">Search For Trainings </h4>
-               
-                <button class="btn btn-dark button1" style="display: inline-block !important;" [routerLink]="['../courselist']">Search</button>
-
-            </div>
-        
     </div>
-  </div>
 
 </div>
+
+<!-- ---------------------------------------------------------EDIT PROFILE -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title">UPDATE YOUR PROFILE</h4>
+            </div>
+
+            <!-- ----------------------------------MODAL -->
+            <div class="modal-body">
+                <div *ngIf="addclick==1">
+
+
+
+                    <label style="color: white"><b>User Name</b></label>
+
+                    <input type="text" placeholder="Enter the new user name" [(ngModel)]="useritem.UserName" name="name"
+                        #name="ngModel" minlength="3" required>
+
+                    <label style="color: white"><b>Email :</b></label>
+                    <input type="email" placeholder="Enter the new email" [(ngModel)]="useritem.Email" name="email"
+                        #email="ngModel" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+
+                    <label style="color: white"><b>Create Password</b></label>
+                    <input type="password" placeholder="Enter new Password" [(ngModel)]="useritem.Password"
+                        name="pass_word" #pass_word2="ngModel" required>
+                    <br>
+                    <br>
+                    <div>
+                        <button class="btn btn-dark justify-content-center" (click)="Update()"> UPDATE </button>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- --------------------------------------------------------CURRENT TRAINING -->
+
+
+<!-- Modal -->
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal12-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title">CURRENT TRAINING</h4>
+            </div>
+
+            <!-- ----------------------------------MODAL -->
+            <div class="modal-body">
+
+                <!-- <button (click)="UserCurTrainings()">Current Trainings</button> -->
+                <table>
+
+                    <tbody>
+
+
+
+                        <table class="table table-striped table-bordered table-hover">
+                            <tr class="text">
+                                <!-- <th>ID</th> -->
+                                <th>TECHNOLOGY ID</th>
+                                <th>START DATE</th>
+                                <th>END DATE</th>
+                                <th>TIMESLOT</th>
+                                <th>STATUS</th>
+                                <th>PROGRESS</th>
+
+                            </tr>
+                            <tr *ngFor="let items of lists">
+                                <!-- <td>{{mentor._id}}</td> -->
+                                <td>{{items.skillId}}</td>
+                                <td>{{items.startDate}}</td>
+                                <td>{{items.endDate}}</td>
+
+                                <td>{{items.timeSlot}}</td>
+                                <td>{{items.status}}</td>
+                                <td>{{items.progress}}%</td>
+                            </tr>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                            </div>
+
+                        </table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- {{lists|json}} -->
+
+<!-- {{item|json}} -->

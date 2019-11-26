@@ -1,47 +1,26 @@
+input[type=email], input[type=password], input[type=text], input[type=number] {
+	width: 100%;
+	padding: 12px 20px;
+	
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+  }
+  .button12 {
+	background-color: rgb(150, 14, 212);
+	color: rgb(0, 0, 0);
+	padding: 14px 20px;
+	margin: 11px 30%;
+	border: none;
+	cursor: pointer;
+	
+	border-radius: 50px;
+	transition: all 0.3s ease-in-out;}
 
-body {font-family: "Lato", sans-serif;
-}
+	.modal-content {
+		background-color: #bd89db;
+		margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+		border: 1px solid #888;
+		 /* Could be more or less, depending on screen size */
+	  }
 
-.card{
-  height: auto;
-  width: auto;
-  /* background-color: rgba(255, 255, 255, 0.89); */
-  background-color:rgba(241, 197, 255, 0.795);
-  /* color: white; */
-  border-radius: 20px;
-  color: #f1f1f1;
-}
-
-.sidebar {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 16px;
-}
-
-.sidebar a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-}
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}

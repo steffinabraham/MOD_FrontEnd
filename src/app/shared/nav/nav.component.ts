@@ -23,22 +23,7 @@ export class NavComponent implements OnInit { [x: string]: any;
   constructor(private http:HttpClient,private router:Router,private _service:LoginService) { }
   ngOnInit() {
   }
-  setok(){
-    var set='';
-    set=localStorage.getItem('token');
-    if(set==null)
-    {
-      return 0;
-    }
-    else{
-      return 1;
-    }
-  }
-    logout(){
-      localStorage.removeItem('token');
-      this.router.navigate(['login']);
-    }
-    
+   
   public Login()
   {
     this._service.Login(this.email,this.pwd).subscribe(data=>{
@@ -71,4 +56,20 @@ export class NavComponent implements OnInit { [x: string]: any;
        console.log("subscribe err");
     });
   }
+  setok(){
+    var set='';
+    set=localStorage.getItem('token');
+    if(set==null)
+    {
+      return 0;
+    }
+    else{
+      return 1;
+    }
+  }
+    logout(){
+      localStorage.removeItem('token');
+      this.router.navigate(['login']);
+    }
+   
 }

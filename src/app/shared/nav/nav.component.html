@@ -12,7 +12,7 @@
           </li>
          
           <li class="nav-item">
-            <a class="nav-link"  routerLink ="course" routerLinkActive="active">Courses</a>
+            <a class="nav-link"  href="#services" routerLinkActive="active">Courses</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="#contactus">Contact Us</a>
@@ -24,7 +24,7 @@
             <a class="nav-link" href="#loginscreen" routerLinkActive="active">Sign Up</a>
 </li><li>
             <div *ngIf="setok()!=0">
-            <a class="nav-link" style="cursor:pointer"(click)="logout()" >Logout</a>
+            <a class="nav-link" href="" style="cursor:pointer"(click)="logout()" >Logout</a>
           </div>
           </li>
           <li class="nav-item " *ngIf="setok()==0" >
@@ -38,7 +38,7 @@
     
     </nav>
 
-<!-- -------------------------------------------------------sigup------------------------------------------------ -->
+<!-- ------------------------------------------------------login------------------------------------------------ -->
 
 <div id="id03" class="modal">
   
@@ -50,16 +50,14 @@
     </div>
 
     <div class="container">
-      <label style="color: white"><b>User Name</b></label>
+  
 
-      <label style="color: white"><b>Email :</b></label>
-      <input type="email" placeholder="Enter Email ID" [(ngModel)]="item.email" name="email" #email="ngModel" required
-        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
-    
-      <label style="color: white"><b>Enter Password</b></label>
-              <input type="password" placeholder="Enter Password" [(ngModel)]="item.pwd" name="pass_word"
-                #pass_word2="ngModel" required>
-
+                <label style="color: white" for="uname"><b>Email</b></label>
+                <input type="text" name="email" class="form-control" [(ngModel)]="email" #emailUser=ngModel ngModel required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+            
+                <label style="color: white" for="psw"><b>Password</b></label>
+                <input type="password" name="pass" class="form-control" [(ngModel)]="first" [(ngModel)]="pwd" #passUser=ngModel ngModel required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
+         
                 <!-- --------------------------------------------------------VALIDATION -->
 
 

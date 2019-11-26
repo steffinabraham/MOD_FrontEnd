@@ -6,7 +6,7 @@
     <a (click)="usrFunction()" style="cursor: pointer;"><i class="fas fa-user-graduate"></i> Users</a>
     <a (click)="mntrFunction()" style="cursor: pointer;"><i class="fas fa-chalkboard-teacher"></i> Mentors</a>
     <a (click)="crsFunction()" style="cursor: pointer;"><i class="fas fa-laptop-code"></i> Technologies</a>
-    <a (click)="msgFunction()" style="cursor: pointer;"><i class="fa fa-fw fa-envelope"></i> Messages</a>
+    <!-- <a (click)="msgFunction()" style="cursor: pointer;"><i class="fa fa-fw fa-envelope"></i> Messages</a> -->
   </div>
 </div>
 
@@ -142,7 +142,7 @@ Welcome {{UserName}}
                 #name="ngModel" minlength="3" required>
 
               <label style="color: white"><b>Table of Contents</b></label>
-              <input type="email" placeholder="Description" [(ngModel)]="techitem.tOC" name="email" #email="ngModel"
+              <input type="email" placeholder="Course Duration in Days" [(ngModel)]="techitem.tOC" name="email" #email="ngModel"
                 required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
 
               <label style="color: white"><b>Price</b></label>
@@ -172,10 +172,9 @@ Welcome {{UserName}}
            
                 <div class="col-md-6 col-lg-4 wow bounceInUp"   data-wow-duration="1.4s" *ngFor="let techitem of techlist">
                   <div class="box" >
-                    <div class="icon" style="background: #fc0058;"><i class="ion-ios-analytics-outline"
-                        style="color: #ff689b;"></i></div>
+       
                     <h4 class="title">{{techitem.skillName}}</h4>
-                    <p class="justify-content-center">{{techitem.toc}}</p>
+                    <p class="justify-content-center">{{techitem.toc}}Days</p>
                     <p class="justify-content-center title">₹{{techitem.fee}} </p>
                     <div class="justify-content-center" >
                         <button type="button" class="btn btn-primary" (click)="DeleteTechnology(techitem.skillId  )" >DELETE</button>

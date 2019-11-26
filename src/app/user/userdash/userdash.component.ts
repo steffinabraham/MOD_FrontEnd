@@ -11,19 +11,21 @@ import { TrainingService } from 'src/app/service/training/training.service';
   styleUrls: ['./userdash.component.css']
 })
 export class UserdashComponent implements OnInit {
-  item:User;
-  list:User[];
+  useritem:User;
+  userlist:User[];
   msg:string;
   addclick;
   lists:Training[];
   items:Training;
 
   UserName:number;
+  UserPeru: string;
   constructor(private router : Router,private _service:UserService,private _trservice:TrainingService) {
     this.UserName = +localStorage.getItem('token');
-    this.item=new User();
-    this._service.GetAll().subscribe(k=>this.list=k);
-    this.item.userId=this.UserName;
+    this.useritem=new User();
+    this._service.GetAll().subscribe(k=>this.userlist=k);
+    this.useritem.userId=this.UserName;
+  
     this.items=new Training();
    
    }
@@ -48,7 +50,7 @@ export class UserdashComponent implements OnInit {
    public Update()
 {
  
-  this._service.Update(this.item).subscribe(k=>k=this.msg)
+  this._service.Update(this.useritem).subscribe(k=>k=this.msg)
 }
 public UserCurTrainings(){
   this._trservice.GetTrainingByUser(this.UserName).subscribe(k=>this.lists=k);

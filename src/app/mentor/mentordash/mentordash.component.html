@@ -1,36 +1,154 @@
-<div class="col-lg-6 grid-margin stretch-card justify-content-center">
-  <div class="card">
-    <div class="card-body">
-      <h4 class="card-title">USER DETAILS</h4>
-      <div class="table-responsive">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Users</th>
-              <th>Course</th>
-              <th>Progress</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let useritem of userlist" class="text">
-              <td>{{useritem.userName}}</td>
-              <td>{{trainingitem.skillName}}</td>
-              <td class="text-danger font-weight-bold "> 28.76% <i class="ti-arrow-down"></i></td>
-              <td><label class="badge badge-danger">Pending</label></td>
-            </tr>
-
-            <!-- <td class="text-danger"> 21.06% <i class="ti-arrow-down"></i></td>
-                <td><label class="badge badge-warning">In progress</label></td>
-                <td class="text-danger"> 35.00% <i class="ti-arrow-down"></i></td>
-                <td><label class="badge badge-info">Fixed</label></td>
-                <td class="text-success"> 82.00% <i class="ti-arrow-up"></i></td>
-                <td><label class="badge badge-success">Completed</label></td>
-                <td class="text-success"> 98.05% <i class="ti-arrow-up"></i></td>
-                <td><label class="badge badge-warning">In progress</label></td> -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+<div class="d-flex justify-content-center" style="padding-top: 40px; color: rgb(255, 255, 255); font-weight: bold;">
+    <h1>WELCOME {{MentorName}}! </h1>
 </div>
+
+<div class="container" style="padding: 30px">
+
+    <div class="card-deck">
+
+        <div class="card "
+            style=" width:100px; height:200px; border-radius: 2rem; color: rgb(255, 255, 255); background-color: rgb(199, 139, 255,0.8);">
+
+            <div class="card-body " style="padding: 30px">
+                <span style=" color: rgba(255, 255, 255)" class="fa fa-clock-o fa-3x "></span>
+                <h4 class="card-title">EDIT PROFILE</h4>
+
+                <button class="btn btn-dark button1" type="submit" (click)="add()" data-toggle="modal"
+                    data-target="#myModal" style="display: inline!important;">View</button>
+            </div>
+        </div>
+
+
+
+        <div class="card"
+            style="width:100px; height:200px; border-radius: 2rem; color: white;  background-color: rgb(199, 139, 255,0.8);">
+            <div class="card-body">
+                <span style=" color: white" class="fa fa-thumbs-o-up fa-3x"></span>
+
+
+                <h4 class="card-title">CURRENT TRAININGS</h4>
+                <button class="btn btn-dark button1" type="submit" (click)="MentorCurTrainings()" data-toggle="modal"
+                    data-target="#myModal2" style="display: inline!important;">View</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- ---------------------------------------------------------EDIT PROFILE -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title">UPDATE YOUR PROFILE</h4>
+            </div>
+
+            <!-- ----------------------------------MODAL -->
+            <div class="modal-body">
+                <div *ngIf="addclick==1">
+
+
+
+                    <label style="color: white"><b>Mentor Name</b></label>
+
+                    <input type="text" placeholder="Enter the new mentor name" [(ngModel)]="mentoritem.MentorName" name="name"
+                        #name="ngModel" minlength="3" required>
+
+                    <label style="color: white"><b>Email :</b></label>
+                    <input type="email" placeholder="Enter the new email" [(ngModel)]="mentoritem.Email" name="email"
+                        #email="ngModel" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+
+                    <label style="color: white"><b>Create Password</b></label>
+                    <input type="password" placeholder="Enter new Password" [(ngModel)]="mentoritem.Password"
+                        name="pass_word" #pass_word2="ngModel" required>
+                    <br>
+                    <br>
+                    <div>
+                        <button class="btn btn-dark justify-content-center" (click)="Update()"> UPDATE </button>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- --------------------------------------------------------CURRENT TRAINING -->
+
+
+<!-- Modal -->
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal12-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title">CURRENT TRAINING</h4>
+            </div>
+
+            <!-- ----------------------------------MODAL -->
+            <div class="modal-body">
+
+                <!-- <button (click)="MentorCurTrainings()">Current Trainings</button> -->
+                <table>
+
+                    <tbody *ngFor="let items of lists">
+
+
+
+                        <table class="table table-striped table-bordered table-hover">
+                            <tr class="text">
+                                <!-- <th>ID</th> -->
+                                <th>TECHNOLOGY ID</th>
+                                <th>START DATE</th>
+                                <th>END DATE</th>
+                                <th>TIMESLOT</th>
+                                <th>STATUS</th>
+                                <th>PROGRESS</th>
+
+                            </tr>
+                            <tr>
+                                <!-- <td>{{mentor._id}}</td> -->
+                                <td>{{items.skillId}}</td>
+                                <td>{{items.startDate}}</td>
+                                <td>{{items.endDate}}</td>
+
+                                <td>{{items.timeSlot}}</td>
+                                <td>{{items.status}}</td>
+                                <td>{{items.progress}}%</td>
+                            </tr>
+                            <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                        </table>
+                        <!-- {{lists|json}} -->
+
+                        <!-- {{item|json}} -->
+
+
+
+
+
+
+
+
+
+
+
+                       
+       
+     
